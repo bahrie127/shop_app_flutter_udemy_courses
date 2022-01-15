@@ -5,6 +5,7 @@ import '../screens/orders_screen.dart';
 import '../providers/cart.dart' show Cart;
 import '../widgets/cart_item.dart' show CartItemWidget;
 import '../providers/orders.dart' show Orders;
+import '../widgets/app_drawer.dart';
 
 class CartScreen extends StatelessWidget {
   static const routeName = '/cart';
@@ -67,6 +68,7 @@ class CartScreen extends StatelessWidget {
           ))
         ],
       ),
+      drawer: AppDrawer(),
     );
   }
 }
