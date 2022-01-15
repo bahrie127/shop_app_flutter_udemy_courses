@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_app_flutter_udemy_courses/providers/products.dart';
+import './providers/products.dart';
 import './screens/products_overview_screen.dart';
+import './providers/cart.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,6 +16,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (_) => Products(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => Cart(),
         ),
       ],
       child: MaterialApp(
