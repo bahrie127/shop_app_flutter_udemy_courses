@@ -7,7 +7,7 @@ class Product with ChangeNotifier {
   final double price;
   final String imageUrl;
   bool isFavorite;
-  
+
   Product({
     required this.id,
     required this.title,
@@ -21,7 +21,6 @@ class Product with ChangeNotifier {
     isFavorite = !isFavorite;
     notifyListeners();
   }
-  
 }
 
 class Products with ChangeNotifier {
@@ -66,5 +65,9 @@ class Products with ChangeNotifier {
 
   List<Product> get favoriteItems {
     return _items.where((element) => element.isFavorite).toList();
+  }
+
+  Product findById(String id) {
+    return _items.firstWhere((element) => element.id == id);
   }
 }
